@@ -748,7 +748,7 @@ class FreeEventQueue:
         returns an empty :class:`list`.
         """
         events: List[torch.cuda.Event] = []
-        if len(self._queue) >= self._max_num_inflight_all_gathers:
+        if len(self._queue) >= 1:
             while self._queue:
                 event = self._dequeue()
                 assert event is not None
